@@ -8,10 +8,13 @@
     android:layout_width="match_parent">
 
     <android.support.design.widget.AppBarLayout
-        android:layout_height="168dp"
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
         android:background="@color/primaryColor">
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsingtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="?attr/colorPrimary"
 
@@ -20,6 +23,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_height="?actionBarSize"
+                android:layout_width="match_parent"
                 app:navigationIcon="@mipmap/ic_launcher"
                 app:contentInsetStart="72dp"
                 app:layout_scrollFlags="scroll|enterAlways"

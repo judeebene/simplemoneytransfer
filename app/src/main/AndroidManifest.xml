@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shareqube.judeben.mmt" >
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,14 +26,8 @@
             android:name=".SendMoney"
             android:label="@string/title_activity_send_money" >
         </activity>
-        <activity
-            android:name=".Account"
-            android:label="@string/title_activity_account" >
-        </activity>
-        <activity
-            android:name=".ConfirmTransfer"
-            android:label="@string/title_activity_confirm_transfer" >
-        </activity>
+
+
         <activity
             android:name=".CheckBalance"
             android:label="@string/title_activity_check_balance" >
@@ -44,10 +40,10 @@
             android:name=".TransferCompleted"
             android:label="@string/title_activity_transfer_completed" >
         </activity>
-        <activity
-            android:name=".AccountContinue"
-            android:label="@string/title_activity_account_continue" >
-        </activity>
+
+        <receiver android:name=".ConfirmTransfer$smsSendMonitor"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

@@ -102,18 +102,17 @@ public class Navigation extends AppCompatActivity {
         Class fragmentClass;
         switch(menuItem.getItemId()) {
         case R.id.nav_first_fragment:
-            Toast.makeText(this , "navigation first ", Toast.LENGTH_LONG).show();
+
             fragmentClass  =  BeginTransferFragment.class ;
             break;
         case R.id.nav_second_fragment:
        // fragmentClass = SecondFragment.class;
-            Toast.makeText(this , "navigation first ", Toast.LENGTH_LONG).show();
-break;
+
+            break;
         case R.id.nav_third_fragment:
-            Toast.makeText(this , "navigation second ", Toast.LENGTH_LONG).show();
+
 break;
 default:
-    Toast.makeText(this , "navigation second ", Toast.LENGTH_LONG).show();
 
     fragmentClass = BeginTransferFragment.class;
 

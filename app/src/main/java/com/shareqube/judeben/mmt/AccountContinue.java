@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +24,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AccountContinue extends Fragment {
+
+    String LOG_TAG =  AccountContinue.class.getSimpleName() ;
+
     CollapsingToolbarLayout mcolapsingtoolbar ;
     Toolbar mToolBar ;
     EditText amountToSend ;
@@ -46,6 +50,7 @@ public class AccountContinue extends Fragment {
        final String bankName =  info.getString("bankName");
         final String phoneNumber = info.getString("phoneNumber");
         final String acountNumber = info.getString("account");
+        final String recipientName =  info.getString("fullname") ;
 
 
         mcolapsingtoolbar = ((CollapsingToolbarLayout)rootView.findViewById(R.id.collapsingtoolbar));
@@ -62,6 +67,8 @@ public class AccountContinue extends Fragment {
 
                 if( ! amountToSend.getText().toString().equals("")) {
 
+                    Log.e(LOG_TAG , "check the class Name");
+
                     String amount = amountToSend.getText().toString();
 
                     Bundle args =  new  Bundle();
@@ -70,6 +77,7 @@ public class AccountContinue extends Fragment {
                     args.putString("bankName" , bankName);
                     args.putString("amount" , amount);
                     args.putString("phoneNumber" , phoneNumber);
+                    args.putString("fullname",recipientName);
 
                     ConfirmTransfer confirmTransfer = new ConfirmTransfer();
 

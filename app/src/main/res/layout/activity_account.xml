@@ -8,7 +8,7 @@
     android:layout_width="match_parent">
 
     <android.support.design.widget.AppBarLayout
-        android:layout_height="168dp"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
         android:background="@color/primaryColor">
 

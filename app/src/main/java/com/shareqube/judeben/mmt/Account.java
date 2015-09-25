@@ -71,7 +71,7 @@ public class Account extends Fragment {
         Bundle recipientInfo = getArguments();
 
         String recipientEmail = recipientInfo.getString("email");
-        String recipientName = recipientInfo.getString("fullname");
+        final String recipientName = recipientInfo.getString("fullname");
         final String recipientPhone = recipientInfo.getString("phoneNumber");
 
 
@@ -81,9 +81,10 @@ public class Account extends Fragment {
             public void onClick(View v) {
 
                 Bundle args = new Bundle() ;
-                 args.putString("account" , acc_number.toString());
+                 args.putString("account" , acc_number.getText().toString());
 
-                args.putString("bankName" , bankName.toString());
+                args.putString("bankName" , bankName.getSelectedItem().toString());
+                args.putString("fullname" , recipientName);
                 args.putString("phoneNumber" , recipientPhone);
 
                 AccountContinue accountContinue = new AccountContinue();
